@@ -1,0 +1,37 @@
+# https://editorconfig.org/
+# 表明是最顶层的配置文件
+root = true
+
+# 正则*匹配所有文件
+[*]
+# 换行符统一为lf
+end_of_line = lf
+# 字符集utf-8
+charset = utf-8
+# 缩进风格：空格
+indent_style = space
+# 缩进大小4
+indent_size = 4
+# 是否去处行首行尾的空白字符
+trim_trailing_whitespace = true
+# 保存文件时在最后新插入一行
+insert_final_newline = true
+tab_width = 4
+max_line_length = 160               # 单行的最大度应为 160 个字符。
+
+# 正则匹配以.md结尾的文件
+[*.md]
+# 在新行之前是否移除所有的空格字符
+trim_trailing_whitespace = false
+
+[Makefile]
+indent_style = tab
+
+[*.js]                              # 对所有的 js 文件生效
+quote_type = single                 # 字符串使用单引号
+curly_bracket_next_line = false     # 大括号不另起一行
+spaces_around_operators = true      # 运算符两边都有空格
+indent_brace_style = 1tbs           # 条件语句格式是 1tbs
+
+[*.{html,less,css,json,ejs}]        # 对所有 html, less, css, json, ejs 文件生效
+quote_type = double                 # 字符串使用双引号

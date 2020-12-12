@@ -33,6 +33,16 @@ module.exports = {
         }
       },
       {
+          test: /\.(woff|woff2?|eot|ttf|otf)(\?.*)?$/,
+          // 导入字体文件，并最打包到output.path+ options.name对应的路径中
+          loader: "url-loader",
+          options: {
+              limit: 8192,
+              name: "fonts/[name].[hash:7].[ext]",
+              fallback: "file-loader"
+          }
+      },
+      {
         test: /\.js$/,
         loader: 'babel-loader',
         exclude: /node_modules/

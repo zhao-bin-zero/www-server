@@ -1,0 +1,74 @@
+{
+  # 列宽，默认为80
+  "printWidth": 160,
+  # tab缩进大小,默认为2
+  "tabWidth": 4,
+  # 使用tab缩进，默认false
+  "useTabs": false,
+  # 使用分号, 默认true
+  "semi": true,
+  # 使用单引号, 默认false(在jsx中配置无效, 默认都是双引号)
+  "singleQuote": true,
+  # 在JSX中使用单引号而不是双引号。
+  "jsxSingleQuote": false,
+  # 是否使用引号包裹对象的键名，默认为"as-needed"
+  # "as-needed" 当且仅当对象中特定键名需要被引号包裹时，使用引号包裹特定键名
+  # "consistent" 如果对象中至少存在一个键名必须被引号包裹时，使用引号包裹所有键名
+  # "preserve" 不做任何特殊处理
+  "quoteProps": "consistent",
+  # 行尾逗号,默认es5,可选 none|es5|all
+  # "none" 不使用
+  # "es5" 仅使用多行数组尾后逗号和多行对象尾后逗号
+  # "all" 尽可能多地使用尾后逗号，在"es5"的基础上，还在函数的参数列表中使用尾后逗号
+  "trailingComma": "es5",
+  # 是否在对象字面量的两个花括号内侧使用空格作为间隔 默认true
+  # true: { foo: bar }
+  # false: {foo: bar}
+  "bracketSpacing": true,
+  # 是否使用箭头函数参数括号，默认为"always"
+  # "avoid" 尽可能省略
+  # "always" 总是使用
+  # avoid: var sayHello = name => {
+  #   return "hi " + name;
+  # };
+  # always: var sayHello = (name) => {
+  #   return "hi " + name;
+  # };
+  "arrowParens": "always",
+  # 设定格式化范围的起点，默认为0
+  "rangeStart": 0,
+  # 设定格式化范围的终点，默认为无穷大。
+  # 注意：.inf即YAML中的无穷大。
+  "rangeEnd": .inf,
+  # 是否仅格式化文件顶部有pragma指令（一种特殊注释）的文件，默认为false。
+  # /** @prettier */
+  # /** @format */
+  "requirePragma": false,
+  # 是否在格式化后的文件顶部插入pragma指令（一种特殊注释），默认为false
+  "insertPragma": false,
+  # markdown折行
+  # "always" 总是折行
+  # "never" 不折行
+  # "preserve" 不处理（默认值）
+  "proseWrap": "never",
+  # 是否使用空白字符格式化HTML文件
+  # "css" 按照CSS的display规则，块元素格式化，行内元素不格式化（默认值）
+  # "strict" 都不格式化
+  # "ignore" 都格式化
+  "htmlWhitespaceSensitivity": "css",
+  # JSX标签闭合位置,将 > 多行 JSX 元素放在最后一行的末尾，而不是单独放在下一行（不适用于自闭元素）。 默认false
+  # false: <div
+  #          className=""
+  #          style={{}}
+  #       >
+  # true: <div
+  #          className=""
+  #          style={{}} >
+  "jsxBracketSameLine": false,
+  # 换行符。
+  # "auto" 不处理
+  # "lf" 换行 Linux或macOS（默认值）
+  # "crlf" 回车换行 Windows
+  # "cr" 回车
+  "endOfLine": "lf"
+}
