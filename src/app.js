@@ -1,15 +1,17 @@
 import Vue from "vue";
 import VueMate from "vue-meta";
-import ElementUI from 'element-ui'
+import { BootstrapVueIcons } from 'bootstrap-vue'
 import App from "./App.vue";
 import createRouter from "./router";
 import createStore from "./store";
-import 'element-ui/lib/theme-chalk/index.css'
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
 
 import { sync } from "vuex-router-sync";
 
 Vue.use(VueMate);
-Vue.use(ElementUI, { size: 'small' })
+Vue.use(BootstrapVue)
+Vue.use(BootstrapVueIcons)
 
 const createApp = (context) => {
   console.log(context)

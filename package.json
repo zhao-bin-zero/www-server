@@ -15,13 +15,13 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^0.18.0",
-    "element-ui": "^2.4.5",
+    "bootstrap-vue": "^2.20.1",
     "express": "^4.16.3",
-    "vue": "^2.5.17",
+    "vue": "^2.6.12",
     "vue-meta": "^2.4.0",
     "vue-router": "^3.0.1",
-    "vue-server-renderer": "^2.5.17",
-    "vue-template-compiler": "^2.5.17",
+    "vue-server-renderer": "^2.6.12",
+    "vue-template-compiler": "^2.6.12",
     "vuex": "^3.0.1",
     "vuex-router-sync": "^5.0.0"
   },

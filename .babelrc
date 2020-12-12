@@ -7,14 +7,5 @@
       }
     ]
   ],
-  "plugins": [
-    "syntax-dynamic-import",
-    [
-      "component",
-      {
-        "libraryName": "element-ui",
-        "styleLibraryName": "theme-chalk"
-      }
-    ]
-  ]
+  "plugins": ["syntax-dynamic-import"]
 }

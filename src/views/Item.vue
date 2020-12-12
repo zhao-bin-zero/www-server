@@ -3,7 +3,7 @@
         <span v-if="!item">loading</span>
         <div v-if="item">
             <h2>{{ item.title }}</h2>
-            <el-button>默认按钮</el-button>
+            <!-- bootstrap-vue-icons -->
             <div v-html="item.content"></div>
         </div>
     </div>
@@ -19,7 +19,13 @@ export default {
             ],
         };
     },
+    data() {
+        return {
+          aa:1,
+        };
+    },
     asyncData({ store, route }) {
+        
         return store.dispatch('fetchItem', route.params.id);
     },
     computed: {
