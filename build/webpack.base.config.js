@@ -20,6 +20,7 @@ module.exports = {
             public: resolve('public'),
             '@': resolve('src'),
             '@node_modules': resolve('node_modules'),
+            '@bootstrap-vue': resolve('node_modules/bootstrap-vue/esm'),
         },
     },
     module: {
