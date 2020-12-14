@@ -71,7 +71,7 @@ class Request {
 				return response.data;
 			},
 			error => {
-				console.log('网络错误，请稍后重试', error?.message);
+				console.log('网络错误，请稍后重试', error.message);
 				if (error.response) {
 					switch (error.response.status) {
 						case 401: // 返回 401 
@@ -133,6 +133,13 @@ class Request {
 	// login(params) {
 	// 	return this._http(api.loginApi, 'POST', params)
 	// }
+
+	fetchItem(id) {
+		return this._http(api.fetchItem + id, 'GET')
+	}
+	fetchList() {
+		return this._http(api.fetchList, 'GET')
+	}
 }
 
 

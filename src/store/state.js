@@ -1,7 +1,8 @@
-const states = {
-    items: {},
-    list: []
-    
-}
+const states = () => {
+    return {
+        items: {},
+        list: [],
+    };
+};
 
 export default states;
