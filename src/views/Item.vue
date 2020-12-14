@@ -3,7 +3,7 @@
         <span v-if="!item">loading</span>
         <div v-if="item">
             <h2>{{ item.title }}</h2>
-            <!-- bootstrap-vue-icons -->
+            <!-- <bootstrap-vue-icons> -->
             <div v-html="item.content"></div>
         </div>
     </div>

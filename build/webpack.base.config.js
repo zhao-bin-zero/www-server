@@ -19,6 +19,7 @@ module.exports = {
         alias: {
             public: resolve('public'),
             '@': resolve('src'),
+            '@node_modules': resolve('node_modules'),
         },
     },
     module: {
