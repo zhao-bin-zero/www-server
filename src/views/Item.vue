@@ -34,7 +34,7 @@ export default {
         },
     },
     mounted() {
-        console.log('item logeed');
+        console.log('item logeed', this.$options);
     },
 };
 </script>
