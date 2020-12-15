@@ -1,5 +1,8 @@
 const states = () => {
     return {
+        cookies: {},
+
+        
         items: {},
         list: [],
     };

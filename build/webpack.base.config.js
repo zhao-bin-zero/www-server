@@ -57,14 +57,14 @@ module.exports = {
                     name: '[name].[ext]?[hash]',
                 },
             },
-            {
-                test: /\.scss$/,
-                use: ['vue-style-loader', 'css-loader', 'sass-loader'],
-            },
-            {
-                test: /\.css$/,
-                use: ['vue-style-loader', 'css-loader'],
-            },
+            // {
+            //     test: /\.scss$/,
+            //     use: ['vue-style-loader', 'css-loader', 'sass-loader'],
+            // },
+            // {
+            //     test: /\.css$/,
+            //     use: ['vue-style-loader', 'css-loader'],
+            // },
         ],
     },
     plugins: [new VueLoaderPlugin()],

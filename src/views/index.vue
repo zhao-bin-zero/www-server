@@ -20,18 +20,6 @@
         ></b-breadcrumb>
         <b-calendar v-model="value" @context="onContext" locale="en-US"></b-calendar>
         <b-dropdown id="dropdown-1" text="Dropdown Button" class="m-md-2">
-            <!-- <div>
-                <b-button v-b-toggle.collapse-1 variant="primary">Toggle Collapse</b-button>
-                <b-collapse id="collapse-1" class="mt-2">
-                    <b-card>
-                        <p class="card-text">Collapse contents Here</p>
-                        <b-button v-b-toggle.collapse-1-inner size="sm">Toggle Inner Collapse</b-button>
-                        <b-collapse id="collapse-1-inner" class="mt-2">
-                            <b-card>Hello!</b-card>
-                        </b-collapse>
-                    </b-card>
-                </b-collapse>
-            </div> -->
             <b-dropdown-item>First Action</b-dropdown-item>
             <b-dropdown-item>Second Action</b-dropdown-item>
             <b-dropdown-item>Third Action</b-dropdown-item>
@@ -66,8 +54,6 @@
         <b-card class="mt-3" header="Form Data Result">
             <pre class="m-0">{{ form }}</pre>
         </b-card>
-
-        <!-- <b-button v-b-modal.modal-center>Launch centered modal</b-button> -->
 
         <b-modal id="modal-center" centered title="BootstrapVue">
             <p class="my-4">Vertically centered modal!</p>

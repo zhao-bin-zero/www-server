@@ -11,7 +11,7 @@ import { sync } from 'vuex-router-sync';
 Vue.use(VueMate);
 
 const createApp = (context) => {
-    console.log(context);
+    // console.log(context);
     const router = createRouter();
     const store = createStore();
     const request = createRequest();

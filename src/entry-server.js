@@ -9,6 +9,10 @@ export default (context) => {
     const meta = app.$meta();
     // 设置服务器端 router 的位置
     router.push(context.url);
+
+      // get client cookies
+      if (context.cookies) store.state.cookies = context.cookies
+      
     // 等到 router 将可能的异步组件和钩子函数解析完
     router.onReady(() => {
       const matchedComponents = router.getMatchedComponents();
@@ -17,6 +21,7 @@ export default (context) => {
       if (!matchedComponents.length) {
         return reject({ code: 404 });
       }
+
 
       Promise.all(
         matchedComponents.map((component) => {
