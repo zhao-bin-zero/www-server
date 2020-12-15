@@ -82,19 +82,36 @@ const renderVue = (app) => {
             cookies: req.cookies,
         };
         console.log('context', context);
-        renderer.renderToString(context, (err, html) => {
-            // console.log(err, html)
-            if (err) {
-                return handleError(err);
-            }
-            res.send(html);
-            if (cacheable) {
-                microCache.set(req.url, html);
-            }
-            if (!isProd) {
-                console.log(`whole request: ${Date.now() - startTime}ms`);
-            }
-        });
+        // renderer.renderToString(context, (err, html) => {
+        //     // console.log(err, html)
+        //     if (err) {
+        //         return handleError(err);
+        //     }
+        //     res.send(html);
+        //     if (cacheable) {
+        //         microCache.set(req.url, html);
+        //     }
+        //     if (!isProd) {
+        //         console.log(`whole request: ${Date.now() - startTime}ms`);
+        //     }
+        // });
+        renderer.renderToStream(context).on('error', handleError)
+        .on('end', () => console.log(`whole request: ${Date.now() - startTime}ms`))
+        .pipe(res)
+        // let html = ''
+
+        // stream.on('data', data => {
+        //   html += data.toString()
+        // })
+        
+        // stream.on('end', () => {
+        //   console.log(html) // 渲染完成
+        // })
+        
+        // stream.on('error', err => {
+        //   // handle error...
+        // })
+
     }
 
     router.get(
