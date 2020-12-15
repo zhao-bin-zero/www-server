@@ -1,7 +1,8 @@
 const path = require('path');
-const webpack = require('webpack')
+const webpack = require('webpack');
 const { VueLoaderPlugin } = require('vue-loader');
 const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin'); // 提取css，提取多个来源时，需要实例化多个，并用extract方法
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin'); // 用于压缩js文件
 
 const isProd = process.env.NODE_ENV === 'production';
 function resolve(dir) {
@@ -62,40 +63,47 @@ module.exports = {
             },
             {
                 test: /\.css$/,
-                use:  isProd
-                ? ExtractTextWebpackPlugin.extract({
-                    use: 'css-loader',
-                    fallback: 'vue-style-loader'
-                  })
-                : ['vue-style-loader', 'css-loader']
+                use: isProd
+                    ? ExtractTextWebpackPlugin.extract({
+                          use: 'css-loader',
+                          fallback: 'vue-style-loader',
+                      })
+                    : ['vue-style-loader', 'css-loader'],
             },
             {
                 test: /\.scss$/,
                 use: isProd
-                ? ExtractTextWebpackPlugin.extract({
-                    use: ['css-loader', 'sass-loader'],
-                    fallback: 'vue-style-loader'
-                  })
-                : ['vue-style-loader', 'css-loader', 'sass-loader'],
+                    ? ExtractTextWebpackPlugin.extract({
+                          use: ['css-loader', 'sass-loader'],
+                          fallback: 'vue-style-loader',
+                      })
+                    : ['vue-style-loader', 'css-loader', 'sass-loader'],
             },
-            // {
-            //     test: /\.scss$/,
-            //     use: ['vue-style-loader', 'css-loader', 'sass-loader'],
-            // },
-            // {
-            //     test: /\.css$/,
-            //     use: ['vue-style-loader', 'css-loader'],
-            // },
         ],
     },
     plugins: isProd
         ? [
               new VueLoaderPlugin(),
-            //   new webpack.optimize.UglifyJsPlugin({
-            //     compress: { warnings: false }
-            //   }),
               new ExtractTextWebpackPlugin({ filename: 'common.[chunkhash].css' }),
               // 确保添加了此插件！
+
+              new UglifyJSPlugin({
+                  // 压缩JS
+                  sourceMap: true,
+                  parallel: true, // 使用多进程并行运行和文件缓存来提高构建速度
+                  uglifyOptions: {
+                      compress: {
+                          warnings: false, // 在删除不可用代码或未使用的声明等时显示警告
+                      },
+                  },
+              }),
+
+    // 压缩提取出的css，并解决ExtractTextPlugin分离出的js重复问题(多个文件引入同一css文件)
+    // new OptimizeCssAssetsPlugin({
+    //   assetNameRegExp: /\.css$/g,
+    //   cssProcessor: require('cssnano'),
+    //   canPrint: true
+    // }),
           ]
         : [new VueLoaderPlugin()],
 };
