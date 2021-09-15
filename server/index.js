@@ -11,13 +11,14 @@ app.use(compression());
 // }
 
 app.use('/:lang(UK)', (req, res) => {
-  res.redirect('https://uk.tigerwit.com/')
+  // res.redirect('https://uk.tigerwit.com/#uk')
+  res.redirect('https://baidu.com/#uk')
 });
 app.use('/:lang(hh)', (req, res) => {
   res.send('123')
 });
 app.use(
-    '/:lang(a)?',
+    '/:lang(b)?',
     (req, res, next) => {
         next();
     },
